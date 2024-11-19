@@ -10,17 +10,15 @@ const Contact = require("../models/contactModel");
 
 // URL : /contacts
 // Method : GET
-const getAllContacts = asyncHandler(async (req, res) => {
+const viewAllContacts = asyncHandler(async (req, res) => {
   const contacts = await Contact.find();
   //  res.send(allContacts);
-  console.log(contacts);
   res.render("all_contact", { contacts: contacts });
 });
 
 // URL : /contacts
-// Method : POST
+// Method : POST (Add Contact)
 const createContact = asyncHandler(async (req, res) => {
-  console.log(req.body);
   const { name, email, phone } = req.body;
   if (!name || !email || !phone) {
     return res.send("name, email and phone are required");
@@ -30,8 +28,14 @@ const createContact = asyncHandler(async (req, res) => {
     email,
     phone,
   });
-  res.send("Contact is created");
+  res.redirect("/contacts");
 });
+
+// URL : /contacts/add
+// Method : GET
+const viewAddContact = (req, res) => {
+  res.render("add_contact");
+};
 
 // URL : /contacts/:id
 // Method : GET
@@ -69,8 +73,9 @@ const deleteContact = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  getAllContacts,
+  viewAllContacts,
   createContact,
+  viewAddContact,
   getContact,
   updateContact,
   deleteContact,

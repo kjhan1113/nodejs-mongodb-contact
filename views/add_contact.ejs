@@ -1,0 +1,35 @@
+<%- include("./template/_header") %>
+<div class="add-contact">
+  <a href="/contacts"><i class="fa-solid fa-list"></i>Contact List</a>
+</div>
+
+<h2>Add Contact</h2>
+<p>Add new contact information</p>
+
+<form method="POST" action="/contacts/viewAddContact">
+  <div class="form-container">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <div class="input-wrapper">
+        <input type="text" name="name" placeholder="Enter your name" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <div class="input-wrapper">
+        <input type="text" name="email" placeholder="Enter your email" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <div class="input-wrapper">
+        <input type="text" name="phone" placeholder="Enter your phone" />
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Add Contact" />
+    </div>
+  </div>
+</form>
+
+<%- include("./template/_footer") %>
