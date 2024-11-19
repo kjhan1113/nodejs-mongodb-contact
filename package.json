@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.21.1",
     "express-async-handler": "^1.2.0",
     "mongoose": "^8.7.2",
-    "npx": "^10.2.2"
+    "npx": "^3.0.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
